@@ -17,13 +17,13 @@ class scenario:
         self.id=id
         
     def videoScenario(self,x):
-        File.createDirectory(self.id)
+        dirName=File.createDirectory(self.id)
         vecttor=x.rstrip('\n')
         interval=vecttor.split(" ")
         #print (interval)
         i=0
         self.ids=str(i)
-        os.system('ffmpeg -ss '+str(interval[0])+' -i video.mp4 -c copy -t '+str(interval[1])+' '+self.ids[i]+'.mp4')
+        os.system('ffmpeg -ss '+str(interval[0])+' -i video.mp4 -c copy -t '+str(interval[1])+' '+dirName+'/'+dirName+'.mp4')
         i+=1
         return print("Scenarios created...")
 
@@ -42,9 +42,8 @@ class File:
         dirName='Scenario'+str(dirName)
         if not os.path.exists(dirName):
             os.mkdir(dirName)
-            """print("Directory " , dirName ,  " Created ")
-        else:    
-            print("Directory " , dirName ,  " already exists") """
+        return dirName
+            
     
 
 class Sumo:
