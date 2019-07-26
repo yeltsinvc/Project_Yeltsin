@@ -18,7 +18,7 @@ for x in f:
     k+=1
 
 
-
-sumoScenario = preprocesing.Sumo()
+background = 'image.png'
+sumoScenario = preprocesing.Sumo(background)
 
 sumoScenario.generateNetwork()
